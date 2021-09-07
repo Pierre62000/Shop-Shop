@@ -2,6 +2,9 @@
 
 function getPage($db){
 
+    $lesPages['commentaire'] = "commentaireControleur";
+    $lesPages['commentairemod'] = "commentaireModifControleur";
+
 
     $lesPages['accueil'] = "accueilControleur";
     $lesPages['vente'] = "venteControleur";
@@ -13,6 +16,8 @@ function getPage($db){
     $lesPages['utilisateur'] = "utilisateurControleur";
     $lesPages['type'] = "typeControleur";
     $lesPages['utilisateurmod'] = "utilisateurModifControleur";
+    $lesPages['produitajout'] = "produitAjoutControleur";
+    $lesPages['twofactor'] = "twofactorControleur";
 
     
     if ($db!=null){
@@ -20,13 +25,13 @@ function getPage($db){
             $page = $_GET['page'];
         }
         else{
-            $page = 'accueil';
+            $page = 'connexion';
         }
         if (isset($lesPages[$page])){
             $contenu = $lesPages[$page];
         }
         else{
-            $contenu = $lesPages['accueil'];
+            $contenu = $lesPages['connexion'];
         }
         return $contenu;
     }

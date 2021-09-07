@@ -4,9 +4,6 @@ function accueilControleur($twig){
     echo $twig->render('accueil.html.twig', array());
 }
 
-function venteControleur($twig){
-    echo $twig->render('vente.html.twig', array());
-}
 
 function contactControleur($twig,$db){
     $formC = array();
@@ -91,10 +88,6 @@ function deconnexionControleur($twig, $db){
     session_unset();
     session_destroy();
     header("Location:index.php");    
-}
-
-function maintenanceControleur($twig){
-    echo $twig->render('maintenance.html.twig', array());
 }
 
 ?>
